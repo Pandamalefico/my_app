@@ -164,7 +164,7 @@
   color: #222;
 }
 .type.steel {
-  background: white;
+  background: #fff;
   border-color: #B9B4CD;
   color: #222;
 }
@@ -200,9 +200,13 @@
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 60%;
+  width: 700px;
   height: 65%;
   position: relative;
+}
+
+.pokemon_modal_header h2, .pokemon_modal_header h3 {
+  text-transform: capitalize;
 }
 
 .modal_infos nav {

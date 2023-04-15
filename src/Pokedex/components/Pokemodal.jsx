@@ -5,7 +5,7 @@ import About from "./About"
 import Evolutions from "./Evolutions"
 
 const Pokemodal = ({ isOpen, handleClose, pokemon, img }) => {
-  const { name, id, types, sprites, generation } = pokemon
+  const { name, id, types, generation } = pokemon
   return (
     <>
       {isOpen && (
@@ -18,17 +18,19 @@ const Pokemodal = ({ isOpen, handleClose, pokemon, img }) => {
             className='pokemon_modalContent'
             onClick={(e) => e.stopPropagation()}
           >
-            <header>
+            <header className='pokemon_modal_header'>
               <h2>{`${name}`}</h2>
-              <h3>{`${generation}`}</h3>
+              <h3>{`${generation.name
+                .replace(/\w$/g, (c) => c.toUpperCase())
+                .replace("-", " ")}`}</h3>
               <div className='types_container'>
                 <PokeTypes types={types} />
               </div>
+              <img
+                src={img}
+                alt={name}
+              />
             </header>
-            <img
-              src={img}
-              alt={name}
-            />
 
             <div className='modal_infos'>
               <Tabs>

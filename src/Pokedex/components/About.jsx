@@ -2,15 +2,7 @@ import axios from "axios"
 import { useEffect, useRef } from "react"
 
 const About = ({ pokemon }) => {
-  const avg_bodyStat = (bodyStat) => {
-    const minStat = parseFloat(bodyStat.minimum.slice(0, -2))
-    const maxStat = parseFloat(bodyStat.maximum.slice(0, -2))
-    const unit =
-      bodyStat === "weight"
-        ? bodyStat.minimum.slice(-2)
-        : bodyStat.minimum.slice(-1)
-    return `${minStat + maxStat / 2}${unit}`
-  }
+  const { weight, height, genera } = pokemon
   const about = pokemon.flavor_text_entries[0].flavor_text
 
   return (
@@ -20,12 +12,15 @@ const About = ({ pokemon }) => {
         <span className='info_value'>{about}</span>
 
         <span className='info_name'>Avg Weight</span>
-        <span className='info_value'>{pokemon.weight}</span>
+        <span className='info_value'>{weight / 10}Kg</span>
 
         <span className='info_name'>Avg Height</span>
-        <span className='info_value'>{pokemon.height}</span>
+        <span className='info_value'>{height * 10}cm</span>
+
+        <span className='info_name'>Species</span>
+        <span className='info_value'>{genera[7].genus}</span>
       </section>
-      <section className='about_breeding'></section>
+      <section className='species'></section>
     </div>
   )
 }
