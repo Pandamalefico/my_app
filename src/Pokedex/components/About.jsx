@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useRef } from "react"
 
 const About = ({ pokemon }) => {
-  const { weight, height, genera } = pokemon
+  const { weight, height, genera, habitat } = pokemon
   const about = pokemon.flavor_text_entries[0].flavor_text
 
   return (
@@ -19,6 +19,11 @@ const About = ({ pokemon }) => {
 
         <span className='info_name'>Species</span>
         <span className='info_value'>{genera[7].genus}</span>
+
+        <span className='info_name'>Habitat</span>
+        <span className='info_value'>
+          {habitat.name.replace(/^\w/g, (c) => c.toUpperCase())}
+        </span>
       </section>
       <section className='species'></section>
     </div>

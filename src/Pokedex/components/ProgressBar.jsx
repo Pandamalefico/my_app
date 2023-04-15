@@ -17,6 +17,7 @@ const ProgressBar = ({ name, value }) => {
       >
         {name}
       </label>
+      <span>{val}</span>
       <progress
         id={`${name}-bar`}
         value={val}
@@ -25,7 +26,6 @@ const ProgressBar = ({ name, value }) => {
       >
         {val}
       </progress>
-      <span>{val}</span>
     </>
   )
 }

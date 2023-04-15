@@ -192,7 +192,7 @@
   padding: 20px
   border-radius: 10px
   width: 700px
-  height: 65%
+  height: 650px
   position: relative
 
 .pokemon_modal_header
@@ -249,16 +249,25 @@
   flex-direction: column
   align-items: center
   li
-    text-align: left
     text-transform: capitalize
-    width: 45%
+    width: 42%
     list-style: none
     display: flex
     flex-direction: row
-    justify-content: space-between
+    //justify-content: space-between
     margin-bottom: .3em
+    label
+      text-align: left
+      color: #777
+
+    label
+      flex-grow: 1
+      flex-basis: 0
+    span
+      flex-grow: .3
 
 .progress
+  width: 110px
   &.red
     accent-color: #bd4c44
   &.green

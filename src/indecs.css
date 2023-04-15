@@ -201,7 +201,7 @@
   padding: 20px;
   border-radius: 10px;
   width: 700px;
-  height: 65%;
+  height: 650px;
   position: relative;
 }
 
@@ -272,16 +272,28 @@
   align-items: center;
 }
 .progress_list li {
-  text-align: left;
   text-transform: capitalize;
-  width: 45%;
+  width: 42%;
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin-bottom: 0.3em;
 }
+.progress_list li label {
+  text-align: left;
+  color: #777;
+}
+.progress_list li label {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.progress_list li span {
+  flex-grow: 0.3;
+}
 
+.progress {
+  width: 110px;
+}
 .progress.red {
   accent-color: #bd4c44;
 }
