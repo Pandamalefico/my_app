@@ -3,9 +3,10 @@ import Tabs from "./Tabs"
 import Tab from "./Tab"
 import About from "./About"
 import Evolutions from "./Evolutions"
+import Stats from "./Stats"
 
 const Pokemodal = ({ isOpen, handleClose, pokemon, img }) => {
-  const { name, id, types, generation } = pokemon
+  const { name, id, types, generation, stats } = pokemon
   return (
     <>
       {isOpen && (
@@ -44,7 +45,7 @@ const Pokemodal = ({ isOpen, handleClose, pokemon, img }) => {
                   index='1'
                   name='stats'
                 >
-                  Stats
+                  <Stats stats={pokemon.stats} />
                 </Tab>
                 <Tab
                   index='2'
