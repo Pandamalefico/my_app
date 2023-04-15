@@ -1,17 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Pokemodal from "./Pokemodal"
 import PokeTypes from "./PokeTypes"
 
 const Pokemon = (pokemon) => {
   const [modalOpen, setModalOpen] = useState(false)
+  const [poke, setPoke] = useState({})
 
   const toggleModalOpen = () => {
     setModalOpen(!modalOpen)
   }
 
-  const { name, id, types } = pokemon
-  const urlImg = require(`../assets/img/${id}.png`)
+  const { name, id, types, sprites } = pokemon
 
+  const urlImg = sprites.other["official-artwork"].front_default
   return (
     <div
       className='pokemon'

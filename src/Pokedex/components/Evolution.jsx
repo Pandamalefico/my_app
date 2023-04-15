@@ -19,7 +19,6 @@ const Evolution = ({ evolutions }) => {
             className='evolution_actual'
           />
           {index <= lenght - 1 && <span className='requirements'> = </span>}
-          <abbr>ATM</abbr>
         </>
       )
     })

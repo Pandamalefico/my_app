@@ -33,7 +33,7 @@
 .pokemon_container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 3px;
+  grid-gap: 1rem;
   margin: 20px 0;
   padding: 0 10px;
 }
@@ -43,7 +43,10 @@
   flex-direction: column;
 }
 .pokemon img {
+  width: 230px;
   align-self: center;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .pokemon_infobox {

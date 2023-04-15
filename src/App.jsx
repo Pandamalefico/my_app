@@ -1,11 +1,18 @@
-import { useState } from "react"
 import PokeContainer from "./Pokedex/components/PokeContainer"
-import pokelist from "./Pokedex/pokelist.json"
+import usePokeList from "./Pokedex/apiCalls"
 
 const App = () => {
-  const [pokeList, setPokeList] = useState(pokelist)
+  const interval = {
+    limit: 30,
+    offset: 0,
+  }
+  const { pokeList, isLoading, error } = usePokeList(interval)
+
+  console.log(pokeList)
   return (
     <div className='App'>
+      {isLoading && <h2>Loading...</h2>}
+
       <PokeContainer pokelist={pokeList} />
     </div>
   )

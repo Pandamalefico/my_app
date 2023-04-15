@@ -4,7 +4,7 @@ const PokeContainer = ({ pokelist }) => {
   const pokemons = pokelist.map((pokemon) => (
     <Pokemon
       {...pokemon}
-      key={pokemon.id}
+      key={pokemon.name}
     />
   ))
   return <div className='pokemon_container'>{pokemons}</div>
