@@ -21,7 +21,7 @@ const ProgressBar = ({ name, value }) => {
       <progress
         id={`${name}-bar`}
         value={val}
-        max='100'
+        max={name == "total" ? "1000" : "255"}
         className={`progress ${value <= 50 ? "red" : "green"}`}
       >
         {val}
