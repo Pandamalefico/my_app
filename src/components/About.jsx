@@ -1,6 +1,15 @@
 import axios from "axios"
 import { useEffect, useRef } from "react"
 
+const Infotag = ({ label, value }) => {
+  return (
+    <>
+      <span className='info_name'>{label}</span>
+      <span className='info_value'>{value}</span>
+    </>
+  )
+}
+
 const About = ({ pokemon }) => {
   const { weight, height, genera, habitat } = pokemon
   const about = pokemon.flavor_text_entries[0].flavor_text
@@ -8,22 +17,23 @@ const About = ({ pokemon }) => {
   return (
     <div className='about'>
       <section className='about_infos'>
-        <span className='info_name'>About</span>
-        <span className='info_value'>{about}</span>
+        <Infotag
+          label='Avg Weight'
+          value={`${weight / 10}Kg`}
+        />
 
-        <span className='info_name'>Avg Weight</span>
-        <span className='info_value'>{weight / 10}Kg</span>
-
-        <span className='info_name'>Avg Height</span>
-        <span className='info_value'>{height * 10}cm</span>
-
-        <span className='info_name'>Species</span>
-        <span className='info_value'>{genera[7].genus}</span>
-
-        <span className='info_name'>Habitat</span>
-        <span className='info_value'>
-          {habitat.name.replace(/^\w/g, (c) => c.toUpperCase())}
-        </span>
+        <Infotag
+          label='Avg Height'
+          value={`${height * 10}cm`}
+        />
+        <Infotag
+          label='Species'
+          value={genera[7].genus}
+        />
+        <Infotag
+          label='Habitat'
+          value={habitat.name.replace(/^\w/g, (c) => c.toUpperCase())}
+        />
       </section>
       <section className='species'></section>
     </div>

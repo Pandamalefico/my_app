@@ -5,7 +5,13 @@ const ProgressBar = ({ name, value }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (val < value) setVal(val + 1)
+      if (val <= value) {
+        if (name == "total") {
+          setVal(val + 5)
+          return
+        }
+        setVal(val + 2)
+      }
     }, 7)
   }, [val])
 
@@ -17,12 +23,12 @@ const ProgressBar = ({ name, value }) => {
       >
         {name}
       </label>
-      <span>{val}</span>
+      <span>{value}</span>
       <progress
         id={`${name}-bar`}
         value={val}
         max={name == "total" ? "1000" : "255"}
-        className={`progress ${value <= 50 ? "red" : "green"}`}
+        className={`progress`}
       >
         {val}
       </progress>
