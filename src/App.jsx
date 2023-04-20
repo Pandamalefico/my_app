@@ -1,5 +1,5 @@
-import PokeContainer from "./Pokedex/components/PokeContainer"
-import usePokeList from "./Pokedex/apiCalls"
+import PokeContainer from "./components/PokeContainer"
+import usePokeList from "./apiCalls"
 
 const App = () => {
   const interval = {
